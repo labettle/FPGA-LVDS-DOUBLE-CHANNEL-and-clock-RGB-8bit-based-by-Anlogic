@@ -1,0 +1,22 @@
+============================================================
+   Tang Dynasty, V6.1.154205
+   Copyright (c) 2012-2025 Anlogic Inc.
+   Executable = D:/APP/Anlogic/bin/run.exe
+   Built at =   16:13:58 Jan 20 2025
+   Run by =     admin
+   Run Date =   Mon Aug 11 16:26:06 2025
+
+   Run on =     DESKT-CNBDGRPWD
+============================================================
+KIT-5608 WARNING: chipwatcher ram data error: trigger position 128, sample number 8192, data length 753664.
+RUN-6004 WARNING: There are 51 nets with only 1 pin.
+RUN-6004 WARNING: There are 51 nets with only 1 pin.
+PHY-5062 WARNING: Possible clk overflow in IO bank 32; which may ends up with routing violation.
+PHY-5062 WARNING: Possible clk overflow in IO bank 32; which may ends up with routing violation.
+RUN-6002 WARNING: There are 29 undriven nets.
+RUN-6003 WARNING: There are 29 nets without any pin.
+RUN-6004 WARNING: There are 35 nets with only 1 pin.
+
+
+PHY-5079 WARNING: Marked 1 clock net(s) utilize the local routing resources. Please check log message and the sinks of clock nets.
+PHY-5079 WARNING: Marked 1 clock net(s) utilize the local routing resources. Please check log message and the sinks of clock nets.
