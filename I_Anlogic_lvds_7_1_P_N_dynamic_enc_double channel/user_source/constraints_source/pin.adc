@@ -1,0 +1,89 @@
+#LVDS25 + PRE_EMP
+
+set_pin_assignment	{ I_clk }	{ LOCATION = N6; IOSTANDARD = LVCMOS25; PULLTYPE = PULLUP; }
+set_pin_assignment	{ I_lvds_rx_clk_o }	{ LOCATION = J13; IOSTANDARD = LVDS25; }
+
+set_pin_assignment	{ I_lvds_rxo_d0_n }	{ LOCATION = U14; IOSTANDARD = LVDS25; }
+set_pin_assignment	{ I_lvds_rxo_d0_p }	{ LOCATION = V14; IOSTANDARD = LVDS25; }
+set_pin_assignment	{ I_lvds_rxo_d1_n }	{ LOCATION = U15; IOSTANDARD = LVDS25; }
+set_pin_assignment	{ I_lvds_rxo_d1_p }	{ LOCATION = V15; IOSTANDARD = LVDS25; }
+set_pin_assignment	{ I_lvds_rxo_d2_n }	{ LOCATION = U17; IOSTANDARD = LVDS25; }
+set_pin_assignment	{ I_lvds_rxo_d2_p }	{ LOCATION = V17; IOSTANDARD = LVDS25; }
+set_pin_assignment	{ I_lvds_rxo_d3_n }	{ LOCATION = V18; IOSTANDARD = LVDS25; }
+set_pin_assignment	{ I_lvds_rxo_d3_p }	{ LOCATION = U18; IOSTANDARD = LVDS25; }
+
+set_pin_assignment	{ I_lvds_rx_clk_e }	{ LOCATION = L15; IOSTANDARD = LVDS25; }
+
+set_pin_assignment	{ I_lvds_rxe_d0_p }	{ LOCATION = F18; IOSTANDARD = LVDS25; }
+set_pin_assignment	{ I_lvds_rxe_d1_p }	{ LOCATION = L15; IOSTANDARD = LVDS25; }
+set_pin_assignment	{ I_lvds_rxe_d2_p }	{ LOCATION = J18; IOSTANDARD = LVDS25; }
+set_pin_assignment	{ I_lvds_rxe_d3_p }	{ LOCATION = E13; IOSTANDARD = LVDS25; }
+
+set_pin_assignment	{ O_lvds_tx_clk_o}	{ LOCATION = C14; IOSTANDARD = LVDS25;VOD = 350M; VOCM = L6; PRE_EMP = ON;}
+
+set_pin_assignment	{ O_lvds_txo_d0 }	{ LOCATION = A17; IOSTANDARD = LVDS25;VOD = 350M; VOCM = L6; PRE_EMP = ON;}
+set_pin_assignment	{ O_lvds_txo_d1 }	{ LOCATION = B17; IOSTANDARD = LVDS25;VOD = 350M; VOCM = L6; PRE_EMP = ON;}
+set_pin_assignment	{ O_lvds_txo_d2 }	{ LOCATION = A13; IOSTANDARD = LVDS25;VOD = 350M; VOCM = L6; PRE_EMP = ON;}
+set_pin_assignment	{ O_lvds_txo_d3 }	{ LOCATION = D16; IOSTANDARD = LVDS25;VOD = 350M; VOCM = L6; PRE_EMP = ON;}
+
+set_pin_assignment	{ O_lvds_tx_clk_e}	{ LOCATION = D15; IOSTANDARD = LVDS25;VOD = 350M; VOCM = L6; PRE_EMP = ON;}
+
+set_pin_assignment	{ O_lvds_txe_d0 }	{ LOCATION = A17; IOSTANDARD = LVDS25;VOD = 350M; VOCM = L6; PRE_EMP = ON;}
+set_pin_assignment	{ O_lvds_txe_d1 }	{ LOCATION = B17; IOSTANDARD = LVDS25;VOD = 350M; VOCM = L6; PRE_EMP = ON;}
+set_pin_assignment	{ O_lvds_txe_d2 }	{ LOCATION = A13; IOSTANDARD = LVDS25;VOD = 350M; VOCM = L6; PRE_EMP = ON;}
+set_pin_assignment	{ O_lvds_txe_d3 }	{ LOCATION = D16; IOSTANDARD = LVDS25;VOD = 350M; VOCM = L6; PRE_EMP = ON;}
+
+set_pin_assignment	{ O_true_flag_led }	{ LOCATION = L6; IOSTANDARD = LVCMOS18; DRIVESTRENGTH = 8; PULLTYPE = PULLUP; }
+
+
+
+
+
+#LVDS18
+
+#set_pin_assignment	{ I_clk }	{ LOCATION = U10; IOSTANDARD = LVCMOS18; PULLTYPE = PULLUP; }
+#set_pin_assignment	{ I_lvds_rx_clk }	{ LOCATION = P20; IOSTANDARD = LVDS18; }
+#set_pin_assignment	{ I_lvds_rx_d0_n }	{ LOCATION = M21; IOSTANDARD = LVDS18; }
+#set_pin_assignment	{ I_lvds_rx_d0_p }	{ LOCATION = M22; IOSTANDARD = LVDS18; }
+#set_pin_assignment	{ I_lvds_rx_d1_n }	{ LOCATION = P21; IOSTANDARD = LVDS18; }
+#set_pin_assignment	{ I_lvds_rx_d1_p }	{ LOCATION = N21; IOSTANDARD = LVDS18; }
+#set_pin_assignment	{ I_lvds_rx_d2_n }	{ LOCATION = L22; IOSTANDARD = LVDS18; }
+#set_pin_assignment	{ I_lvds_rx_d2_p }	{ LOCATION = K22; IOSTANDARD = LVDS18; }
+#set_pin_assignment	{ I_lvds_rx_d3_n }	{ LOCATION = C22; IOSTANDARD = LVDS18; }
+#set_pin_assignment	{ I_lvds_rx_d3_p }	{ LOCATION = C21; IOSTANDARD = LVDS18; }
+
+
+#set_pin_assignment	{ O_lvds_tx_clk }	{ LOCATION = H18; IOSTANDARD = LVDS18; VOD = 350M; VOCM = L6; PRE_EMP = ON; }
+#set_pin_assignment	{ O_lvds_tx_d0 }	{ LOCATION = E22; IOSTANDARD = LVDS18; VOD = 350M; VOCM = L6; PRE_EMP = ON; }
+#set_pin_assignment	{ O_lvds_tx_d1 }	{ LOCATION = E20; IOSTANDARD = LVDS18; VOD = 350M; VOCM = L6; PRE_EMP = ON; }
+#set_pin_assignment	{ O_lvds_tx_d2 }	{ LOCATION = C19; IOSTANDARD = LVDS18; VOD = 350M; VOCM = L6; PRE_EMP = ON; }
+#set_pin_assignment	{ O_lvds_tx_d3 }	{ LOCATION = D21; IOSTANDARD = LVDS18; VOD = 350M; VOCM = L6; PRE_EMP = ON; }
+#set_pin_assignment	{ O_true_flag_led }	{ LOCATION = P6; IOSTANDARD = LVCMOS18; DRIVESTRENGTH = 8; PULLTYPE = PULLUP; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

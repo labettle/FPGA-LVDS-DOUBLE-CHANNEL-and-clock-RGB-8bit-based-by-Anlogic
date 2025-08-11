@@ -1,0 +1,403 @@
+Copyright (c) 2012-2025 Anlogic Inc., All Rights Reserved.
+----------------------------------------------------------------------------
+| Tool Version : Tang Dynasty v6.1.154205 Mar 21 2025 18:37:08              
+| Date         : Mon Aug 11 16:26:31 2025                                   
+| Command      : report_clock_utilization -file place_clock_utilization.txt 
+| Design       : design_top_wrapper                                         
+| Device       : ph1_35p-PH1P35MDG324                                       
+| Speed        : 3                                                          
+----------------------------------------------------------------------------
+
+Table of Contents
+-----------------
+A. Clock Utilization Report.
+B. Clock Buffer Info.
+C. IP Stat.
+
+
+------------------------------------------------------------------------------------------------------------
+----------------------------------------A. Clock Utilization Report.----------------------------------------
+------------------------------------------------------------------------------------------------------------
+
+1. Clock Buffer Utilization
++------------------+------+-----------+
+| Type             | Used | Available |
++------------------+------+-----------+
+| PH1_PHY_GCLK_V2  |    0 |        32 |
+| PH1_PHY_HP_IOCLK |    0 |         8 |
+| PH1_PHY_HP_MLCLK |    0 |         8 |
+| PH1_PHY_IOCLK    |    0 |         8 |
+| PH1_PHY_LCLK_V2  |    0 |        16 |
+| PH1_PHY_MLCLK_V2 |    0 |         8 |
+| PH1_PHY_SCLK_V2  |    0 |        48 |
++------------------+------+-----------+
+
+
+2. Global Clock Resource Stat.
++------------+------------+---------------+----------------------------------------------------------------+------------+------+-----------+-------------------+-------------+-------------+--------------+-----------------------+----------------------------------------------------+
+| Global Idx | Source Idx | Global Type   | Inst.Pin                                                       | Constraint | site | Location  | Load Clock Region | Clock Loads | Total Loads | Clock Period | Clock                 | Net                                                |
++------------+------------+---------------+----------------------------------------------------------------+------------+------+-----------+-------------------+-------------+-------------+--------------+-----------------------+----------------------------------------------------+
+| gclk_0     | src_0      | PH1P_PHY_GCLK | test_case/wrapper_cwc_top/cwc_trig_clk_created_gclkinst.clkout | None       | T    | x23y39z19 |                 4 |         448 |         448 |       40.000 | I_clk                 | test_case/wrapper_cwc_top/cwc_trig_clk_syn_5       |
+| gclk_1     | src_1      | PH1P_PHY_GCLK | u_rx_pll_odd/u_rx_pll/bufg_c0.clkout                           | None       | B    | x23y39z1  |                 4 |         315 |         315 |       10.000 | rx_clk_o_out0         | u_lvds_rx_wrapper/u0_lvds_lane/u_idelay_ctrl/I_clk |
+| gclk_2     | src_2      | PH1P_PHY_GCLK | u_rx_pll_even/u_rx_pll/bufg_c0.clkout                          | None       | B    | x23y39z0  |                 4 |         305 |         305 |       10.000 | rx_clk_e_out0         | u_lvds_rx_wrapper/u4_lvds_lane/u_idelay_ctrl/I_clk |
+| gclk_3     | src_3      | PH1P_PHY_GCLK | config_inst_syn_1.clkout                                       | None       | B    | x23y39z4  |                 4 |         300 |         300 |      100.000 | config_inst.cwc_tck_o | cwc_jtck                                           |
+| gclk_4     | src_4      | PH1P_PHY_GCLK | u_tx_pll_even/u_tpll/bufg_c0.clkout                            | None       | T    | x23y39z17 |                 3 |          22 |          22 |        5.599 | tx_clk_e_out0         | u_lvds_tx_wrapper/I_clk_1x_e                       |
+| gclk_5     | src_5      | PH1P_PHY_GCLK | u_tx_pll_odd/u_tpll/bufg_c0.clkout                             | None       | T    | x23y39z16 |                 2 |          21 |          21 |        5.599 | tx_clk_o_out0         | u_lvds_tx_wrapper/I_clk_1x_o                       |
+| gclk_6     | src_6      | PH1P_PHY_GCLK | u_lvds_tx_wrapper/I_clk_3p5x_created_gclkinst.clkout           | None       | T    | x23y39z18 |                 1 |           8 |           8 |        5.599 | tx_clk_o_out1         | u_lvds_tx_wrapper/I_clk_3p5x_syn_1                 |
+| gclk_7     | src_7      | PH1P_PHY_GCLK | u_lvds_rx_wrapper/I_clk_3p5x_o_created_gclkinst.clkout         | None       | B    | x23y39z2  |                 1 |           8 |           8 |        2.857 | rx_clk_o_out1         | u_lvds_rx_wrapper/I_clk_3p5x_o_syn_1               |
+| gclk_8     | src_8      | PH1P_PHY_GCLK | u_lvds_rx_wrapper/I_clk_3p5x_e_created_gclkinst.clkout         | None       | B    | x23y39z3  |                 1 |           8 |           8 |        2.857 | rx_clk_e_out1         | u_lvds_rx_wrapper/I_clk_3p5x_e_syn_1               |
+| gclk_9     | src_9      | PH1P_PHY_GCLK | I_lvds_rx_clk_o_dup_1_created_gclkinst.clkout                  | None       | T    | x23y39z21 |                 1 |           5 |           5 |              |                       | I_lvds_rx_clk_o_syn_4                              |
+| gclk_10    | src_10     | PH1P_PHY_GCLK | I_lvds_rx_clk_e_dup_1_created_gclkinst.clkout                  | None       | T    | x23y39z20 |                 1 |           5 |           5 |              |                       | I_lvds_rx_clk_e_syn_4                              |
++------------+------------+---------------+----------------------------------------------------------------+------------+------+-----------+-------------------+-------------+-------------+--------------+-----------------------+----------------------------------------------------+
+
+
+3. Global Clock Source Stat.
++------------+------------+--------------------+--------------------------------------------------------------------------------------+------------+------+----------+-------------+-----------------+---------------------+-----------------------+----------------------------------------+
+| Source Idx | Global Idx | Source Type        | Inst.Pin                                                                             | Constraint | Site | Location | Clock Loads | Non Clock Loads | Source Clock Period | Source Clock          | Net                                    |
++------------+------------+--------------------+--------------------------------------------------------------------------------------+------------+------+----------+-------------+-----------------+---------------------+-----------------------+----------------------------------------+
+| src_0      | gclk_0     | PH1P_PHY_HR_PAD_V2 | I_clk_syn_2.di                                                                       | None       | N/A  | x43y56z0 |           3 |               0 |              40.000 | I_clk                 | test_case/wrapper_cwc_top/cwc_trig_clk |
+| src_1      | gclk_1     | PH1P_PHY_PLL_V2    | u_rx_pll_odd/u_rx_pll/PH1P_PHY_PLL_WRAPPER_393d45aa68c4_Inst/u_PH1P_PHY_PLL.clkc[0]  | None       | N/A  | x0y0z0   |           1 |               0 |              10.000 | rx_clk_o_out0         | u_rx_pll_odd/u_rx_pll/clk0_buf         |
+| src_2      | gclk_2     | PH1P_PHY_PLL_V2    | u_rx_pll_even/u_rx_pll/PH1P_PHY_PLL_WRAPPER_393d45aa68c4_Inst/u_PH1P_PHY_PLL.clkc[0] | None       | N/A  | x0y39z0  |           1 |               0 |              10.000 | rx_clk_e_out0         | u_rx_pll_even/u_rx_pll/clk0_buf        |
+| src_3      | gclk_3     | PH1P_PHY_CONFIG_V2 | config_inst.cwc_tck_o                                                                | None       | N/A  | x47y0z0  |           1 |               0 |             100.000 | config_inst.cwc_tck_o | cwc_jtck_leading                       |
+| src_4      | gclk_4     | PH1P_PHY_PLL_V2    | u_tx_pll_even/u_tpll/ph1p_phy_pll_wrapper_d8cf02616d56_Inst/u_PH1P_PHY_PLL.clkc[0]   | None       | N/A  | x43y79z0 |           1 |               0 |               5.599 | tx_clk_e_out0         | u_tx_pll_even/u_tpll/clk0_buf          |
+| src_5      | gclk_5     | PH1P_PHY_PLL_V2    | u_tx_pll_odd/u_tpll/ph1p_phy_pll_wrapper_d8cf02616d56_Inst/u_PH1P_PHY_PLL.clkc[0]    | None       | N/A  | x43y40z0 |           1 |               0 |               5.599 | tx_clk_o_out0         | u_tx_pll_odd/u_tpll/clk0_buf           |
+| src_6      | gclk_6     | PH1P_PHY_PLL_V2    | u_tx_pll_odd/u_tpll/ph1p_phy_pll_wrapper_d8cf02616d56_Inst/u_PH1P_PHY_PLL.clkc[2]    | None       | N/A  | x43y40z0 |           1 |               0 |               5.599 | tx_clk_o_out1         | u_lvds_tx_wrapper/I_clk_3p5x           |
+| src_7      | gclk_7     | PH1P_PHY_PLL_V2    | u_rx_pll_odd/u_rx_pll/PH1P_PHY_PLL_WRAPPER_393d45aa68c4_Inst/u_PH1P_PHY_PLL.clkc[1]  | None       | N/A  | x0y0z0   |           1 |               0 |               2.857 | rx_clk_o_out1         | u_lvds_rx_wrapper/I_clk_3p5x_o         |
+| src_8      | gclk_8     | PH1P_PHY_PLL_V2    | u_rx_pll_even/u_rx_pll/PH1P_PHY_PLL_WRAPPER_393d45aa68c4_Inst/u_PH1P_PHY_PLL.clkc[1] | None       | N/A  | x0y39z0  |           1 |               0 |               2.857 | rx_clk_e_out1         | u_lvds_rx_wrapper/I_clk_3p5x_e         |
+| src_9      | gclk_9     | PH1P_PHY_HR_PAD_V2 | I_lvds_rx_clk_o_syn_2.di                                                             | None       | N/A  | x43y61z2 |           2 |               0 |                     |                       | I_lvds_rx_clk_o_dup_1                  |
+| src_10     | gclk_10    | PH1P_PHY_HR_PAD_V2 | I_lvds_rx_clk_e_syn_2.di                                                             | None       | N/A  | x43y56z2 |           2 |               0 |                     |                       | I_lvds_rx_clk_e_dup_1                  |
++------------+------------+--------------------+--------------------------------------------------------------------------------------+------------+------+----------+-------------+-----------------+---------------------+-----------------------+----------------------------------------+
+
+
+4. Local Clock Resource Stat.
++-----------+--------------------+--------------------------------------------------------------------------------------+------------+------+----------+-------------+-------------+--------------+-----------------------+----------------------------------------+
+| Local Idx | Type               | Inst.Pin                                                                             | Constraint | site | Location | Clock Loads | Total Loads | Clock Period | Clock                 | Net                                    |
++-----------+--------------------+--------------------------------------------------------------------------------------+------------+------+----------+-------------+-------------+--------------+-----------------------+----------------------------------------+
+| local_0   | PH1P_PHY_HR_PAD_V2 | I_clk_syn_2.di                                                                       | None       | N/A  | x43y56z0 |           3 |           3 |       40.000 | I_clk                 | test_case/wrapper_cwc_top/cwc_trig_clk |
+| local_1   | PH1P_PHY_HR_PAD_V2 | I_lvds_rx_clk_e_syn_2.di                                                             | None       | N/A  | x43y56z2 |           2 |           2 |              |                       | I_lvds_rx_clk_e_dup_1                  |
+| local_2   | PH1P_PHY_HR_PAD_V2 | I_lvds_rx_clk_o_syn_2.di                                                             | None       | N/A  | x43y61z2 |           2 |           2 |              |                       | I_lvds_rx_clk_o_dup_1                  |
+| local_3   | PH1P_PHY_PLL_V2    | u_rx_pll_even/u_rx_pll/PH1P_PHY_PLL_WRAPPER_393d45aa68c4_Inst/u_PH1P_PHY_PLL.clkc[1] | None       | N/A  | x0y39z0  |           1 |           1 |        2.857 | rx_clk_e_out1         | u_lvds_rx_wrapper/I_clk_3p5x_e         |
+| local_4   | PH1P_PHY_PLL_V2    | u_rx_pll_odd/u_rx_pll/PH1P_PHY_PLL_WRAPPER_393d45aa68c4_Inst/u_PH1P_PHY_PLL.clkc[1]  | None       | N/A  | x0y0z0   |           1 |           1 |        2.857 | rx_clk_o_out1         | u_lvds_rx_wrapper/I_clk_3p5x_o         |
+| local_5   | PH1P_PHY_PLL_V2    | u_tx_pll_odd/u_tpll/ph1p_phy_pll_wrapper_d8cf02616d56_Inst/u_PH1P_PHY_PLL.clkc[2]    | None       | N/A  | x43y40z0 |           1 |           1 |        5.599 | tx_clk_o_out1         | u_lvds_tx_wrapper/I_clk_3p5x           |
+| local_6   | PH1P_PHY_PLL_V2    | u_rx_pll_even/u_rx_pll/PH1P_PHY_PLL_WRAPPER_393d45aa68c4_Inst/u_PH1P_PHY_PLL.clkc[0] | None       | N/A  | x0y39z0  |           1 |           1 |       10.000 | rx_clk_e_out0         | u_rx_pll_even/u_rx_pll/clk0_buf        |
+| local_7   | PH1P_PHY_PLL_V2    | u_rx_pll_odd/u_rx_pll/PH1P_PHY_PLL_WRAPPER_393d45aa68c4_Inst/u_PH1P_PHY_PLL.clkc[0]  | None       | N/A  | x0y0z0   |           1 |           1 |       10.000 | rx_clk_o_out0         | u_rx_pll_odd/u_rx_pll/clk0_buf         |
+| local_8   | PH1P_PHY_PLL_V2    | u_tx_pll_even/u_tpll/ph1p_phy_pll_wrapper_d8cf02616d56_Inst/u_PH1P_PHY_PLL.clkc[0]   | None       | N/A  | x43y79z0 |           1 |           1 |        5.599 | tx_clk_e_out0         | u_tx_pll_even/u_tpll/clk0_buf          |
+| local_9   | PH1P_PHY_PLL_V2    | u_tx_pll_odd/u_tpll/ph1p_phy_pll_wrapper_d8cf02616d56_Inst/u_PH1P_PHY_PLL.clkc[0]    | None       | N/A  | x43y40z0 |           1 |           1 |        5.599 | tx_clk_o_out0         | u_tx_pll_odd/u_tpll/clk0_buf           |
+| local_10  | PH1P_PHY_CONFIG_V2 | config_inst.cwc_tck_o                                                                | None       | N/A  | x47y0z0  |           1 |           1 |      100.000 | config_inst.cwc_tck_o | cwc_jtck_leading                       |
++-----------+--------------------+--------------------------------------------------------------------------------------+------------+------+----------+-------------+-------------+--------------+-----------------------+----------------------------------------+
+
+
+5. Clock Region Resource Stat.
++-------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+
+|                   |   Global Clock   | PH1_PHY_SCLK_V2  | PH1_PHY_LCLK_V2  | PH1_PHY_MLCLK_V2 | PH1_PHY_HP_MLCLK |  PH1_PHY_IOCLK   | PH1_PHY_HP_IOCLK |
++-------------------+--------+---------+--------+---------+--------+---------+--------+---------+--------+---------+--------+---------+--------+---------+
+| Clock Region Name | Used   | Avail   | Used   | Avail   | Used   | Avail   | Used   | Avail   | Used   | Avail   | Used   | Avail   | Used   | Avail   |
++-------------------+--------+---------+--------+---------+--------+---------+--------+---------+--------+---------+--------+---------+--------+---------+
+| X0Y0              |      0 |      12 |      0 |      12 |      0 |       4 |      0 |       4 |      0 |       0 |      0 |       4 |      0 |       0 |
+| X1Y0              |      0 |      12 |      0 |      12 |      0 |       4 |      0 |       0 |      0 |       4 |      0 |       0 |      0 |       4 |
+| X0Y1              |      0 |      12 |      0 |      12 |      0 |       4 |      0 |       4 |      0 |       0 |      0 |       4 |      0 |       0 |
+| X1Y1              |      0 |      12 |      0 |      12 |      0 |       4 |      0 |       0 |      0 |       4 |      0 |       0 |      0 |       4 |
++-------------------+--------+---------+--------+---------+--------+---------+--------+---------+--------+---------+--------+---------+--------+---------+
+
+
+6. Track Utilization.
++----+----+----+
+|    | X0 | X1 |
++----+----+----+
+| Y1 |  0 |  0 |
+| Y0 |  0 |  0 |
++----+----+----+
+
+
+7. Global Clock gclk_0 Stat.
++------------+---------------+----------------------------------------------------------------+-------------------+-------+-------------+----------------+----------+----------------------------------------------+----------------------+---------------------+----------------------+----------------------------+
+| Global Idx | Type          | Driver.Pin                                                     | Driver Region (D) | Clock | Period (ns) | Waveform (ns)  | Root (R) | Net                                          | FanoutGroup1         | FanoutGroup2        | FanoutGroup3         | FanoutGroup4               |
++------------+---------------+----------------------------------------------------------------+-------------------+-------+-------------+----------------+----------+----------------------------------------------+----------------------+---------------------+----------------------+----------------------------+
+| gclk_0     | PH1P_PHY_GCLK | test_case/wrapper_cwc_top/cwc_trig_clk_created_gclkinst.clkout | T                 | I_clk |      40.000 | {0.000 20.000} | N/A      | test_case/wrapper_cwc_top/cwc_trig_clk_syn_5 | PH1P_PHY_LSLICE(416) | PH1P_PHY_MSLICE(16) | PH1P_PHY_ERAM_V2(14) | PH1P_PHY_SHIFTERHARDCON(2) |
++------------+---------------+----------------------------------------------------------------+-------------------+-------+-------------+----------------+----------+----------------------------------------------+----------------------+---------------------+----------------------+----------------------------+
++----+-----+----+
+|    | X0  | X1 |
++----+-----+----+
+| Y1 |  67 | 27 |
+| Y0 | 293 | 61 |
++----+-----+----+
+
+
+8. Global Clock gclk_1 Stat.
++------------+---------------+--------------------------------------+-------------------+---------------+-------------+---------------+----------+----------------------------------------------------+----------------------+-----------------------+
+| Global Idx | Type          | Driver.Pin                           | Driver Region (D) | Clock         | Period (ns) | Waveform (ns) | Root (R) | Net                                                | FanoutGroup1         | FanoutGroup2          |
++------------+---------------+--------------------------------------+-------------------+---------------+-------------+---------------+----------+----------------------------------------------------+----------------------+-----------------------+
+| gclk_1     | PH1P_PHY_GCLK | u_rx_pll_odd/u_rx_pll/bufg_c0.clkout | B                 | rx_clk_o_out0 |      10.000 | {0.000 5.000} | N/A      | u_lvds_rx_wrapper/u0_lvds_lane/u_idelay_ctrl/I_clk | PH1P_PHY_LSLICE(307) | PH1P_PHY_HR_PAD_V2(8) |
++------------+---------------+--------------------------------------+-------------------+---------------+-------------+---------------+----------+----------------------------------------------------+----------------------+-----------------------+
++----+----+-----+
+|    | X0 | X1  |
++----+----+-----+
+| Y1 | 40 | 189 |
+| Y0 | 48 |  38 |
++----+----+-----+
+
+
+9. Global Clock gclk_2 Stat.
++------------+---------------+---------------------------------------+-------------------+---------------+-------------+---------------+----------+----------------------------------------------------+----------------------+-----------------------+
+| Global Idx | Type          | Driver.Pin                            | Driver Region (D) | Clock         | Period (ns) | Waveform (ns) | Root (R) | Net                                                | FanoutGroup1         | FanoutGroup2          |
++------------+---------------+---------------------------------------+-------------------+---------------+-------------+---------------+----------+----------------------------------------------------+----------------------+-----------------------+
+| gclk_2     | PH1P_PHY_GCLK | u_rx_pll_even/u_rx_pll/bufg_c0.clkout | B                 | rx_clk_e_out0 |      10.000 | {0.000 5.000} | N/A      | u_lvds_rx_wrapper/u4_lvds_lane/u_idelay_ctrl/I_clk | PH1P_PHY_LSLICE(297) | PH1P_PHY_HR_PAD_V2(8) |
++------------+---------------+---------------------------------------+-------------------+---------------+-------------+---------------+----------+----------------------------------------------------+----------------------+-----------------------+
++----+----+-----+
+|    | X0 | X1  |
++----+----+-----+
+| Y1 |  5 | 152 |
+| Y0 | 22 | 126 |
++----+----+-----+
+
+
+10. Global Clock gclk_3 Stat.
++------------+---------------+--------------------------+-------------------+-----------------------+-------------+----------------+----------+----------+----------------------+
+| Global Idx | Type          | Driver.Pin               | Driver Region (D) | Clock                 | Period (ns) | Waveform (ns)  | Root (R) | Net      | FanoutGroup1         |
++------------+---------------+--------------------------+-------------------+-----------------------+-------------+----------------+----------+----------+----------------------+
+| gclk_3     | PH1P_PHY_GCLK | config_inst_syn_1.clkout | B                 | config_inst.cwc_tck_o |     100.000 | {0.000 50.000} | N/A      | cwc_jtck | PH1P_PHY_LSLICE(300) |
++------------+---------------+--------------------------+-------------------+-----------------------+-------------+----------------+----------+----------+----------------------+
++----+-----+----+
+|    | X0  | X1 |
++----+-----+----+
+| Y1 |  80 | 41 |
+| Y0 | 146 | 33 |
++----+-----+----+
+
+
+11. Global Clock gclk_4 Stat.
++------------+---------------+-------------------------------------+-------------------+---------------+-------------+---------------+----------+------------------------------+---------------------+-----------------------+
+| Global Idx | Type          | Driver.Pin                          | Driver Region (D) | Clock         | Period (ns) | Waveform (ns) | Root (R) | Net                          | FanoutGroup1        | FanoutGroup2          |
++------------+---------------+-------------------------------------+-------------------+---------------+-------------+---------------+----------+------------------------------+---------------------+-----------------------+
+| gclk_4     | PH1P_PHY_GCLK | u_tx_pll_even/u_tpll/bufg_c0.clkout | T                 | tx_clk_e_out0 |       5.599 | {0.000 2.799} | N/A      | u_lvds_tx_wrapper/I_clk_1x_e | PH1P_PHY_LSLICE(16) | PH1P_PHY_HR_PAD_V2(6) |
++------------+---------------+-------------------------------------+-------------------+---------------+-------------+---------------+----------+------------------------------+---------------------+-----------------------+
++----+----+----+
+|    | X0 | X1 |
++----+----+----+
+| Y1 |  0 |  9 |
+| Y0 | 12 |  1 |
++----+----+----+
+
+
+12. Global Clock gclk_5 Stat.
++------------+---------------+------------------------------------+-------------------+---------------+-------------+---------------+----------+------------------------------+---------------------+-----------------------+
+| Global Idx | Type          | Driver.Pin                         | Driver Region (D) | Clock         | Period (ns) | Waveform (ns) | Root (R) | Net                          | FanoutGroup1        | FanoutGroup2          |
++------------+---------------+------------------------------------+-------------------+---------------+-------------+---------------+----------+------------------------------+---------------------+-----------------------+
+| gclk_5     | PH1P_PHY_GCLK | u_tx_pll_odd/u_tpll/bufg_c0.clkout | T                 | tx_clk_o_out0 |       5.599 | {0.000 2.799} | N/A      | u_lvds_tx_wrapper/I_clk_1x_o | PH1P_PHY_LSLICE(15) | PH1P_PHY_HR_PAD_V2(6) |
++------------+---------------+------------------------------------+-------------------+---------------+-------------+---------------+----------+------------------------------+---------------------+-----------------------+
++----+----+----+
+|    | X0 | X1 |
++----+----+----+
+| Y1 |  0 |  8 |
+| Y0 | 13 |  0 |
++----+----+----+
+
+
+13. Global Clock gclk_6 Stat.
++------------+---------------+------------------------------------------------------+-------------------+---------------+-------------+---------------+----------+------------------------------------+-----------------------+
+| Global Idx | Type          | Driver.Pin                                           | Driver Region (D) | Clock         | Period (ns) | Waveform (ns) | Root (R) | Net                                | FanoutGroup1          |
++------------+---------------+------------------------------------------------------+-------------------+---------------+-------------+---------------+----------+------------------------------------+-----------------------+
+| gclk_6     | PH1P_PHY_GCLK | u_lvds_tx_wrapper/I_clk_3p5x_created_gclkinst.clkout | T                 | tx_clk_o_out1 |       5.599 | {0.000 2.799} | N/A      | u_lvds_tx_wrapper/I_clk_3p5x_syn_1 | PH1P_PHY_HR_PAD_V2(8) |
++------------+---------------+------------------------------------------------------+-------------------+---------------+-------------+---------------+----------+------------------------------------+-----------------------+
++----+----+----+
+|    | X0 | X1 |
++----+----+----+
+| Y1 |  0 |  8 |
+| Y0 |  0 |  0 |
++----+----+----+
+
+
+14. Global Clock gclk_7 Stat.
++------------+---------------+--------------------------------------------------------+-------------------+---------------+-------------+---------------+----------+--------------------------------------+-----------------------+
+| Global Idx | Type          | Driver.Pin                                             | Driver Region (D) | Clock         | Period (ns) | Waveform (ns) | Root (R) | Net                                  | FanoutGroup1          |
++------------+---------------+--------------------------------------------------------+-------------------+---------------+-------------+---------------+----------+--------------------------------------+-----------------------+
+| gclk_7     | PH1P_PHY_GCLK | u_lvds_rx_wrapper/I_clk_3p5x_o_created_gclkinst.clkout | B                 | rx_clk_o_out1 |       2.857 | {0.000 1.428} | N/A      | u_lvds_rx_wrapper/I_clk_3p5x_o_syn_1 | PH1P_PHY_HR_PAD_V2(8) |
++------------+---------------+--------------------------------------------------------+-------------------+---------------+-------------+---------------+----------+--------------------------------------+-----------------------+
++----+----+----+
+|    | X0 | X1 |
++----+----+----+
+| Y1 |  0 |  8 |
+| Y0 |  0 |  0 |
++----+----+----+
+
+
+15. Global Clock gclk_8 Stat.
++------------+---------------+--------------------------------------------------------+-------------------+---------------+-------------+---------------+----------+--------------------------------------+-----------------------+
+| Global Idx | Type          | Driver.Pin                                             | Driver Region (D) | Clock         | Period (ns) | Waveform (ns) | Root (R) | Net                                  | FanoutGroup1          |
++------------+---------------+--------------------------------------------------------+-------------------+---------------+-------------+---------------+----------+--------------------------------------+-----------------------+
+| gclk_8     | PH1P_PHY_GCLK | u_lvds_rx_wrapper/I_clk_3p5x_e_created_gclkinst.clkout | B                 | rx_clk_e_out1 |       2.857 | {0.000 1.428} | N/A      | u_lvds_rx_wrapper/I_clk_3p5x_e_syn_1 | PH1P_PHY_HR_PAD_V2(8) |
++------------+---------------+--------------------------------------------------------+-------------------+---------------+-------------+---------------+----------+--------------------------------------+-----------------------+
++----+----+----+
+|    | X0 | X1 |
++----+----+----+
+| Y1 |  0 |  8 |
+| Y0 |  0 |  0 |
++----+----+----+
+
+
+16. Global Clock gclk_9 Stat.
++------------+---------------+-----------------------------------------------+-------------------+-------+-------------+---------------+----------+-----------------------+--------------------+
+| Global Idx | Type          | Driver.Pin                                    | Driver Region (D) | Clock | Period (ns) | Waveform (ns) | Root (R) | Net                   | FanoutGroup1       |
++------------+---------------+-----------------------------------------------+-------------------+-------+-------------+---------------+----------+-----------------------+--------------------+
+| gclk_9     | PH1P_PHY_GCLK | I_lvds_rx_clk_o_dup_1_created_gclkinst.clkout | T                 |       |             |               | N/A      | I_lvds_rx_clk_o_syn_4 | PH1P_PHY_LSLICE(5) |
++------------+---------------+-----------------------------------------------+-------------------+-------+-------------+---------------+----------+-----------------------+--------------------+
++----+----+----+
+|    | X0 | X1 |
++----+----+----+
+| Y1 |  5 |  0 |
+| Y0 |  0 |  0 |
++----+----+----+
+
+
+17. Global Clock gclk_10 Stat.
++------------+---------------+-----------------------------------------------+-------------------+-------+-------------+---------------+----------+-----------------------+--------------------+
+| Global Idx | Type          | Driver.Pin                                    | Driver Region (D) | Clock | Period (ns) | Waveform (ns) | Root (R) | Net                   | FanoutGroup1       |
++------------+---------------+-----------------------------------------------+-------------------+-------+-------------+---------------+----------+-----------------------+--------------------+
+| gclk_10    | PH1P_PHY_GCLK | I_lvds_rx_clk_e_dup_1_created_gclkinst.clkout | T                 |       |             |               | N/A      | I_lvds_rx_clk_e_syn_4 | PH1P_PHY_LSLICE(5) |
++------------+---------------+-----------------------------------------------+-------------------+-------+-------------+---------------+----------+-----------------------+--------------------+
++----+----+----+
+|    | X0 | X1 |
++----+----+----+
+| Y1 |  5 |  0 |
+| Y0 |  0 |  0 |
++----+----+----+
+
+
+18. Region X0Y0
++----------+-------+--------------------+------------+-------------+-------------+----------------------------------------------------+----------------------+--------------------+---------------------+----------------------------+
+| Idx      | Track | Type               | Constraint | Clock Loads | Total Loads | Net                                                | FanoutGroup1         | FanoutGroup2       | FanoutGroup3        | FanoutGroup4               |
++----------+-------+--------------------+------------+-------------+-------------+----------------------------------------------------+----------------------+--------------------+---------------------+----------------------------+
+| gclk_0   | N/A   | PH1P_PHY_GCLK      | None       |         293 |         293 | test_case/wrapper_cwc_top/cwc_trig_clk_syn_5       | PH1P_PHY_LSLICE(277) | PH1P_PHY_MSLICE(8) | PH1P_PHY_ERAM_V2(7) | PH1P_PHY_SHIFTERHARDCON(1) |
+| gclk_1   | N/A   | PH1P_PHY_GCLK      | None       |          48 |          48 | u_lvds_rx_wrapper/u0_lvds_lane/u_idelay_ctrl/I_clk | PH1P_PHY_LSLICE(48)  |                    |                     |                            |
+| gclk_2   | N/A   | PH1P_PHY_GCLK      | None       |          22 |          22 | u_lvds_rx_wrapper/u4_lvds_lane/u_idelay_ctrl/I_clk | PH1P_PHY_LSLICE(22)  |                    |                     |                            |
+| gclk_3   | N/A   | PH1P_PHY_GCLK      | None       |         146 |         146 | cwc_jtck                                           | PH1P_PHY_LSLICE(146) |                    |                     |                            |
+| gclk_4   | N/A   | PH1P_PHY_GCLK      | None       |          12 |          12 | u_lvds_tx_wrapper/I_clk_1x_e                       | PH1P_PHY_LSLICE(12)  |                    |                     |                            |
+| gclk_5   | N/A   | PH1P_PHY_GCLK      | None       |          13 |          13 | u_lvds_tx_wrapper/I_clk_1x_o                       | PH1P_PHY_LSLICE(13)  |                    |                     |                            |
+|          |       |                    |            |             |             |                                                    |                      |                    |                     |                            |
+| local_0  | N/A   | PH1P_PHY_HR_PAD_V2 | None       |           1 |           1 | test_case/wrapper_cwc_top/cwc_trig_clk             | PH1P_PHY_GCLK(1)     |                    |                     |                            |
+| local_1  | N/A   | PH1P_PHY_HR_PAD_V2 | None       |           2 |           2 | I_lvds_rx_clk_e_dup_1                              | PH1P_PHY_PLL_V2(1)   | PH1P_PHY_GCLK(1)   |                     |                            |
+| local_2  | N/A   | PH1P_PHY_HR_PAD_V2 | None       |           2 |           2 | I_lvds_rx_clk_o_dup_1                              | PH1P_PHY_PLL_V2(1)   | PH1P_PHY_GCLK(1)   |                     |                            |
+| local_3  | N/A   | PH1P_PHY_PLL_V2    | None       |           1 |           1 | u_lvds_rx_wrapper/I_clk_3p5x_e                     | PH1P_PHY_GCLK(1)     |                    |                     |                            |
+| local_4  | N/A   | PH1P_PHY_PLL_V2    | None       |           1 |           1 | u_lvds_rx_wrapper/I_clk_3p5x_o                     | PH1P_PHY_GCLK(1)     |                    |                     |                            |
+| local_5  | N/A   | PH1P_PHY_PLL_V2    | None       |           1 |           1 | u_lvds_tx_wrapper/I_clk_3p5x                       | PH1P_PHY_GCLK(1)     |                    |                     |                            |
+| local_6  | N/A   | PH1P_PHY_PLL_V2    | None       |           1 |           1 | u_rx_pll_even/u_rx_pll/clk0_buf                    | PH1P_PHY_GCLK(1)     |                    |                     |                            |
+| local_7  | N/A   | PH1P_PHY_PLL_V2    | None       |           1 |           1 | u_rx_pll_odd/u_rx_pll/clk0_buf                     | PH1P_PHY_GCLK(1)     |                    |                     |                            |
+| local_8  | N/A   | PH1P_PHY_PLL_V2    | None       |           1 |           1 | u_tx_pll_even/u_tpll/clk0_buf                      | PH1P_PHY_GCLK(1)     |                    |                     |                            |
+| local_9  | N/A   | PH1P_PHY_PLL_V2    | None       |           1 |           1 | u_tx_pll_odd/u_tpll/clk0_buf                       | PH1P_PHY_GCLK(1)     |                    |                     |                            |
+| local_10 | N/A   | PH1P_PHY_CONFIG_V2 | None       |           1 |           1 | cwc_jtck_leading                                   | PH1P_PHY_GCLK(1)     |                    |                     |                            |
++----------+-------+--------------------+------------+-------------+-------------+----------------------------------------------------+----------------------+--------------------+---------------------+----------------------------+
+
+
+19. Region X1Y0
++--------+-------+---------------+------------+-------------+-------------+----------------------------------------------------+----------------------+--------------------+----------------------------+
+| Idx    | Track | Type          | Constraint | Clock Loads | Total Loads | Net                                                | FanoutGroup1         | FanoutGroup2       | FanoutGroup3               |
++--------+-------+---------------+------------+-------------+-------------+----------------------------------------------------+----------------------+--------------------+----------------------------+
+| gclk_0 | N/A   | PH1P_PHY_GCLK | None       |          61 |          61 | test_case/wrapper_cwc_top/cwc_trig_clk_syn_5       | PH1P_PHY_LSLICE(52)  | PH1P_PHY_MSLICE(8) | PH1P_PHY_SHIFTERHARDCON(1) |
+| gclk_1 | N/A   | PH1P_PHY_GCLK | None       |          38 |          38 | u_lvds_rx_wrapper/u0_lvds_lane/u_idelay_ctrl/I_clk | PH1P_PHY_LSLICE(38)  |                    |                            |
+| gclk_2 | N/A   | PH1P_PHY_GCLK | None       |         126 |         126 | u_lvds_rx_wrapper/u4_lvds_lane/u_idelay_ctrl/I_clk | PH1P_PHY_LSLICE(126) |                    |                            |
+| gclk_3 | N/A   | PH1P_PHY_GCLK | None       |          33 |          33 | cwc_jtck                                           | PH1P_PHY_LSLICE(33)  |                    |                            |
+| gclk_4 | N/A   | PH1P_PHY_GCLK | None       |           1 |           1 | u_lvds_tx_wrapper/I_clk_1x_e                       | PH1P_PHY_LSLICE(1)   |                    |                            |
++--------+-------+---------------+------------+-------------+-------------+----------------------------------------------------+----------------------+--------------------+----------------------------+
+
+
+20. Region X0Y1
++---------+-------+---------------+------------+-------------+-------------+----------------------------------------------------+---------------------+---------------------+
+| Idx     | Track | Type          | Constraint | Clock Loads | Total Loads | Net                                                | FanoutGroup1        | FanoutGroup2        |
++---------+-------+---------------+------------+-------------+-------------+----------------------------------------------------+---------------------+---------------------+
+| gclk_0  | N/A   | PH1P_PHY_GCLK | None       |          67 |          67 | test_case/wrapper_cwc_top/cwc_trig_clk_syn_5       | PH1P_PHY_LSLICE(60) | PH1P_PHY_ERAM_V2(7) |
+| gclk_1  | N/A   | PH1P_PHY_GCLK | None       |          40 |          40 | u_lvds_rx_wrapper/u0_lvds_lane/u_idelay_ctrl/I_clk | PH1P_PHY_LSLICE(40) |                     |
+| gclk_2  | N/A   | PH1P_PHY_GCLK | None       |           5 |           5 | u_lvds_rx_wrapper/u4_lvds_lane/u_idelay_ctrl/I_clk | PH1P_PHY_LSLICE(5)  |                     |
+| gclk_3  | N/A   | PH1P_PHY_GCLK | None       |          80 |          80 | cwc_jtck                                           | PH1P_PHY_LSLICE(80) |                     |
+| gclk_9  | N/A   | PH1P_PHY_GCLK | None       |           5 |           5 | I_lvds_rx_clk_o_syn_4                              | PH1P_PHY_LSLICE(5)  |                     |
+| gclk_10 | N/A   | PH1P_PHY_GCLK | None       |           5 |           5 | I_lvds_rx_clk_e_syn_4                              | PH1P_PHY_LSLICE(5)  |                     |
++---------+-------+---------------+------------+-------------+-------------+----------------------------------------------------+---------------------+---------------------+
+
+
+21. Region X1Y1
++---------+-------+--------------------+------------+-------------+-------------+----------------------------------------------------+-----------------------+-----------------------+
+| Idx     | Track | Type               | Constraint | Clock Loads | Total Loads | Net                                                | FanoutGroup1          | FanoutGroup2          |
++---------+-------+--------------------+------------+-------------+-------------+----------------------------------------------------+-----------------------+-----------------------+
+| gclk_0  | N/A   | PH1P_PHY_GCLK      | None       |          27 |          27 | test_case/wrapper_cwc_top/cwc_trig_clk_syn_5       | PH1P_PHY_LSLICE(27)   |                       |
+| gclk_1  | N/A   | PH1P_PHY_GCLK      | None       |         189 |         189 | u_lvds_rx_wrapper/u0_lvds_lane/u_idelay_ctrl/I_clk | PH1P_PHY_LSLICE(181)  | PH1P_PHY_HR_PAD_V2(8) |
+| gclk_2  | N/A   | PH1P_PHY_GCLK      | None       |         152 |         152 | u_lvds_rx_wrapper/u4_lvds_lane/u_idelay_ctrl/I_clk | PH1P_PHY_LSLICE(144)  | PH1P_PHY_HR_PAD_V2(8) |
+| gclk_3  | N/A   | PH1P_PHY_GCLK      | None       |          41 |          41 | cwc_jtck                                           | PH1P_PHY_LSLICE(41)   |                       |
+| gclk_4  | N/A   | PH1P_PHY_GCLK      | None       |           9 |           9 | u_lvds_tx_wrapper/I_clk_1x_e                       | PH1P_PHY_HR_PAD_V2(6) | PH1P_PHY_LSLICE(3)    |
+| gclk_5  | N/A   | PH1P_PHY_GCLK      | None       |           8 |           8 | u_lvds_tx_wrapper/I_clk_1x_o                       | PH1P_PHY_HR_PAD_V2(6) | PH1P_PHY_LSLICE(2)    |
+| gclk_6  | N/A   | PH1P_PHY_GCLK      | None       |           8 |           8 | u_lvds_tx_wrapper/I_clk_3p5x_syn_1                 | PH1P_PHY_HR_PAD_V2(8) |                       |
+| gclk_7  | N/A   | PH1P_PHY_GCLK      | None       |           8 |           8 | u_lvds_rx_wrapper/I_clk_3p5x_o_syn_1               | PH1P_PHY_HR_PAD_V2(8) |                       |
+| gclk_8  | N/A   | PH1P_PHY_GCLK      | None       |           8 |           8 | u_lvds_rx_wrapper/I_clk_3p5x_e_syn_1               | PH1P_PHY_HR_PAD_V2(8) |                       |
+|         |       |                    |            |             |             |                                                    |                       |                       |
+| local_0 | N/A   | PH1P_PHY_HR_PAD_V2 | None       |           2 |           2 | test_case/wrapper_cwc_top/cwc_trig_clk             | PH1P_PHY_PLL_V2(2)    |                       |
++---------+-------+--------------------+------------+-------------+-------------+----------------------------------------------------+-----------------------+-----------------------+
+
+
+
+-----------------------------------------------------------------------------------------------------
+----------------------------------------B. Clock Buffer Info.----------------------------------------
+-----------------------------------------------------------------------------------------------------
+
+1.Clock Buffer Index.
++---------+---------------+-----------+--------+--------+---------------------------------------------------------+
+| Index   | Type          | Location  | Sector | Fanout | Buffer                                                  |
++---------+---------------+-----------+--------+--------+---------------------------------------------------------+
+| gclk_1  | PH1P_PHY_GCLK | x23y39z19 |      0 |    448 | test_case/wrapper_cwc_top/cwc_trig_clk_created_gclkinst |
+| gclk_2  | PH1P_PHY_GCLK | x23y39z1  |      0 |    315 | u_rx_pll_odd/u_rx_pll/bufg_c0                           |
+| gclk_3  | PH1P_PHY_GCLK | x23y39z0  |      0 |    305 | u_rx_pll_even/u_rx_pll/bufg_c0                          |
+| gclk_4  | PH1P_PHY_GCLK | x23y39z4  |      0 |    300 | config_inst_syn_1                                       |
+| gclk_5  | PH1P_PHY_GCLK | x23y39z17 |      0 |     22 | u_tx_pll_even/u_tpll/bufg_c0                            |
+| gclk_6  | PH1P_PHY_GCLK | x23y39z16 |      0 |     21 | u_tx_pll_odd/u_tpll/bufg_c0                             |
+| gclk_7  | PH1P_PHY_GCLK | x23y39z3  |      0 |      8 | u_lvds_rx_wrapper/I_clk_3p5x_e_created_gclkinst         |
+| gclk_8  | PH1P_PHY_GCLK | x23y39z2  |      0 |      8 | u_lvds_rx_wrapper/I_clk_3p5x_o_created_gclkinst         |
+| gclk_9  | PH1P_PHY_GCLK | x23y39z18 |      0 |      8 | u_lvds_tx_wrapper/I_clk_3p5x_created_gclkinst           |
+| gclk_10 | PH1P_PHY_GCLK | x23y39z20 |      0 |      5 | I_lvds_rx_clk_e_dup_1_created_gclkinst                  |
+| gclk_11 | PH1P_PHY_GCLK | x23y39z21 |      0 |      5 | I_lvds_rx_clk_o_dup_1_created_gclkinst                  |
++---------+---------------+-----------+--------+--------+---------------------------------------------------------+
+
+2.Clock Buffer Driver Stat.
++---------+-----------+------+------------------------------+----------------+------------+
+| Index   | Location  | Site | DriverType.Pin               | DriverLocation | DriverSite |
++---------+-----------+------+------------------------------+----------------+------------+
+| gclk_1  | x23y39z19 | T    | PH1P_PHY_HR_PAD_V2.di        | x43y56z0       | S1 R       |
+| gclk_2  | x23y39z1  | B    | PH1P_PHY_PLL_V2.clkc[0]      | x0y0z0         | S0 L       |
+| gclk_3  | x23y39z0  | B    | PH1P_PHY_PLL_V2.clkc[0]      | x0y39z0        | S0 L       |
+| gclk_4  | x23y39z4  | B    | PH1P_PHY_CONFIG_V2.cwc_tck_o | x47y0z0        | S0 R       |
+| gclk_5  | x23y39z17 | T    | PH1P_PHY_PLL_V2.clkc[0]      | x43y79z0       | S1 R       |
+| gclk_6  | x23y39z16 | T    | PH1P_PHY_PLL_V2.clkc[0]      | x43y40z0       | S1 R       |
+| gclk_7  | x23y39z3  | B    | PH1P_PHY_PLL_V2.clkc[1]      | x0y39z0        | S0 L       |
+| gclk_8  | x23y39z2  | B    | PH1P_PHY_PLL_V2.clkc[1]      | x0y0z0         | S0 L       |
+| gclk_9  | x23y39z18 | T    | PH1P_PHY_PLL_V2.clkc[2]      | x43y40z0       | S1 R       |
+| gclk_10 | x23y39z20 | T    | PH1P_PHY_HR_PAD_V2.di        | x43y56z2       | S1 R       |
+| gclk_11 | x23y39z21 | T    | PH1P_PHY_HR_PAD_V2.di        | x43y61z2       | S1 R       |
++---------+-----------+------+------------------------------+----------------+------------+
+
+3.Clock Buffer Fanout Stat.
++---------+-----------------------+-----------------------+----------------------+----------------------------+
+| Index   | FanoutGroup1          | FanoutGroup2          | FanoutGroup3         | FanoutGroup4               |
++---------+-----------------------+-----------------------+----------------------+----------------------------+
+| gclk_1  | PH1P_PHY_LSLICE(416)  | PH1P_PHY_MSLICE(16)   | PH1P_PHY_ERAM_V2(14) | PH1P_PHY_SHIFTERHARDCON(2) |
+| gclk_2  | PH1P_PHY_LSLICE(307)  | PH1P_PHY_HR_PAD_V2(8) |                      |                            |
+| gclk_3  | PH1P_PHY_LSLICE(297)  | PH1P_PHY_HR_PAD_V2(8) |                      |                            |
+| gclk_4  | PH1P_PHY_LSLICE(300)  |                       |                      |                            |
+| gclk_5  | PH1P_PHY_LSLICE(16)   | PH1P_PHY_HR_PAD_V2(6) |                      |                            |
+| gclk_6  | PH1P_PHY_LSLICE(15)   | PH1P_PHY_HR_PAD_V2(6) |                      |                            |
+| gclk_7  | PH1P_PHY_HR_PAD_V2(8) |                       |                      |                            |
+| gclk_8  | PH1P_PHY_HR_PAD_V2(8) |                       |                      |                            |
+| gclk_9  | PH1P_PHY_HR_PAD_V2(8) |                       |                      |                            |
+| gclk_10 | PH1P_PHY_LSLICE(5)    |                       |                      |                            |
+| gclk_11 | PH1P_PHY_LSLICE(5)    |                       |                      |                            |
++---------+-----------------------+-----------------------+----------------------+----------------------------+
+
+
+-------------------------------------------------------------------------------------------
+----------------------------------------C. IP Stat.----------------------------------------
+-------------------------------------------------------------------------------------------
+
+1.IP List.
++-------+------+----------+------+----------+
+| Index | Bank | Location | Side | Instance |
++-------+------+----------+------+----------+
+
+2.IP Clock Topo Stat.
++--------+--------+-------+----+--------+--------+---------+
+| Driver | Buffer | Inpin | IP | Outpin | Buffer | Fanouts |
++--------+--------+-------+----+--------+--------+---------+
